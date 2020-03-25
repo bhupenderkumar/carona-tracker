@@ -273,10 +273,10 @@ app.get("/", async function (request, response) {
   let a = JSON.parse(await redis.get(keys.all))
   response.send(
     `${a.cases} cases are reported of the COVID-19<br> ${a.deaths} have died from it <br>\n${a.recovered} have recovered from it. <br>
-    View the dashboard here : <a href="https://coronastatistics.live">coronastatistics.live</a>`
+    View the dashboard here `
   );
 });
-var listener = app.listen(process.env.PORT || 5000, function () {
+var listener = app.listen(process.env.PORT || 8080, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
 app.get("/all/", async function (req, res) {
